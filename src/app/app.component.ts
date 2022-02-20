@@ -5,6 +5,18 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+
 export class AppComponent {
-  title = 'angular-app';
+  taskName: string = '';
+  tasks: string[] = [];
+
+  onChange(name: string): void {
+    this.taskName = name;
+  }
+
+  onAdd(): void {
+    this.tasks.push(this.taskName);
+    this.taskName = '';
+  }
 }
